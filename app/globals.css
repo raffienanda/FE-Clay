@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* CLAYRIDE Theme - Premium Super App */
+  --background: #F5F7FA;
+  --foreground: #1F2933;
+  --card: #FFFFFF;
+  --card-foreground: #1F2933;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2933;
+  --primary: #8BBEFF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F7FA;
+  --secondary-foreground: #1F2933;
+  --muted: #E8ECF0;
+  --muted-foreground: #616E7C;
+  --accent: #FF6B6B;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #FFFFFF;
+  --border: #E4E7EB;
+  --input: #E4E7EB;
+  --ring: #8BBEFF;
+  --chart-1: #8BBEFF;
+  --chart-2: #FF6B6B;
+  --chart-3: #52D49F;
+  --chart-4: #FFB84D;
+  --chart-5: #9B7DFF;
+  --radius: 1.25rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1F2933;
+  --sidebar-primary: #8BBEFF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F7FA;
+  --sidebar-accent-foreground: #1F2933;
+  --sidebar-border: #E4E7EB;
+  --sidebar-ring: #8BBEFF;
+}
+
+.dark {
+  --background: #1F2933;
+  --foreground: #F5F7FA;
+  --card: #2D3748;
+  --card-foreground: #F5F7FA;
+  --popover: #2D3748;
+  --popover-foreground: #F5F7FA;
+  --primary: #8BBEFF;
+  --primary-foreground: #1F2933;
+  --secondary: #2D3748;
+  --secondary-foreground: #F5F7FA;
+  --muted: #3D4852;
+  --muted-foreground: #A0AEC0;
+  --accent: #FF6B6B;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #FFFFFF;
+  --border: #3D4852;
+  --input: #3D4852;
+  --ring: #8BBEFF;
+  --chart-1: #8BBEFF;
+  --chart-2: #FF6B6B;
+  --chart-3: #52D49F;
+  --chart-4: #FFB84D;
+  --chart-5: #9B7DFF;
+  --sidebar: #2D3748;
+  --sidebar-foreground: #F5F7FA;
+  --sidebar-primary: #8BBEFF;
+  --sidebar-primary-foreground: #1F2933;
+  --sidebar-accent: #3D4852;
+  --sidebar-accent-foreground: #F5F7FA;
+  --sidebar-border: #3D4852;
+  --sidebar-ring: #8BBEFF;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 16px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utilities for CLAYRIDE */
+@layer utilities {
+  .glass {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.85);
+  }
+  
+  .glass-dark {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(31, 41, 51, 0.85);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 4px 24px -4px rgba(31, 41, 51, 0.08),
+                0 2px 8px -2px rgba(31, 41, 51, 0.04);
+  }
+  
+  .shadow-elevated {
+    box-shadow: 0 8px 32px -8px rgba(31, 41, 51, 0.12),
+                0 4px 16px -4px rgba(31, 41, 51, 0.08);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #8BBEFF 0%, #5A9FFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
