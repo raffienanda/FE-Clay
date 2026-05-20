@@ -30,7 +30,7 @@ interface HomeDashboardProps {
 }
 
 const services = [
-  { icon: Car, label: 'ClayRide', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen },
+  { icon: Car, label: 'ClayRide', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/clayride-icon.png' },
   { icon: UtensilsCrossed, label: 'ClayFood', color: 'bg-accent', iconColor: 'text-white', screen: 'clayfood' as Screen },
   { icon: Package, label: 'ClaySend', color: 'bg-[#52D49F]', iconColor: 'text-white', screen: 'claysend' as Screen },
   { icon: PawPrint, label: 'ClayPet', color: 'bg-[#FFB84D]', iconColor: 'text-white', screen: 'claypet' as Screen },
@@ -165,9 +165,22 @@ export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 
                 onClick={() => onNavigate(service.screen)}
                 className="flex flex-col items-center gap-2"
               >
-                <div className={`w-14 h-14 ${service.color} rounded-2xl flex items-center justify-center shadow-soft`}>
-                  <service.icon className={`w-6 h-6 ${service.iconColor}`} />
-                </div>
+                {service.useImage ? (
+                  <div className="relative w-14 h-14">
+                    <div className={`w-14 h-14 ${service.color} rounded-2xl shadow-soft`} />
+                    <Image
+                      src={service.imageSrc!}
+                      alt={service.label}
+                      width={56}
+                      height={56}
+                      className="absolute -bottom-1 -right-1 w-14 h-14 object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-14 h-14 ${service.color} rounded-2xl flex items-center justify-center shadow-soft`}>
+                    <service.icon className={`w-6 h-6 ${service.iconColor}`} />
+                  </div>
+                )}
                 <span className="text-xs text-foreground font-medium">{service.label}</span>
               </motion.button>
             ))}
