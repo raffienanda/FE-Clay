@@ -65,7 +65,7 @@ const vouchers = [
   {
     id: '4',
     code: 'CASHBACK10',
-    title: 'Cashback 10% ClayPay',
+    title: 'Cashback 10% ClayWallet',
     description: 'Min. transaksi Rp 100.000',
     discount: '10%',
     minOrder: 100000,

@@ -59,7 +59,7 @@ const notifications = [
     icon: CreditCard,
     iconBg: 'bg-[#9B7DFF]',
     title: 'Top Up Berhasil',
-    message: 'Saldo ClayPay Anda bertambah Rp 500.000',
+    message: 'Saldo ClayWallet Anda bertambah Rp 500.000',
     time: '5 jam lalu',
     read: true,
   },

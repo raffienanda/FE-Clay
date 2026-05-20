@@ -81,7 +81,7 @@ export function TopUpScreen({ onNavigate }: TopUpScreenProps) {
           transition={{ delay: 0.3 }}
           className="text-sm text-muted-foreground text-center mb-2"
         >
-          Saldo ClayPay Anda telah bertambah
+          Saldo ClayWallet Anda telah bertambah
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ export function TopUpScreen({ onNavigate }: TopUpScreenProps) {
         >
           <ArrowLeft className="w-5 h-5 text-foreground" />
         </motion.button>
-        <h1 className="text-lg font-bold text-foreground">Top Up ClayPay</h1>
+        <h1 className="text-lg font-bold text-foreground">Top Up ClayWallet</h1>
       </div>
 
       {/* Content */}

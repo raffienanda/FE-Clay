@@ -63,10 +63,10 @@ const faqs = [
     questions: [
       {
         q: 'Metode pembayaran apa saja yang tersedia?',
-        a: 'ClayPay, transfer bank (BCA, Mandiri, BNI), e-wallet (GoPay, OVO, DANA), dan pembayaran tunai untuk layanan tertentu.',
+        a: 'ClayWallet, transfer bank (BCA, Mandiri, BNI), e-wallet (GoPay, OVO, DANA), dan pembayaran tunai untuk layanan tertentu.',
       },
       {
-        q: 'Bagaimana cara top up ClayPay?',
+        q: 'Bagaimana cara top up ClayWallet?',
         a: 'Buka menu Dompet, pilih Top Up, masukkan nominal, pilih metode pembayaran, dan ikuti instruksi untuk menyelesaikan pembayaran.',
       },
     ],

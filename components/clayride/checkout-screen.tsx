@@ -26,7 +26,7 @@ interface CheckoutScreenProps {
 export function CheckoutScreen({ onNavigate, items, clearCart }: CheckoutScreenProps) {
   const [isProcessing, setIsProcessing] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const [selectedPayment, setSelectedPayment] = useState('claypay')
+  const [selectedPayment, setSelectedPayment] = useState('claywallet')
 
   const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0)
   const deliveryFee = 10000
@@ -197,7 +197,7 @@ export function CheckoutScreen({ onNavigate, items, clearCart }: CheckoutScreenP
           <h3 className="text-sm font-semibold text-foreground mb-3">Metode Pembayaran</h3>
           <div className="space-y-2">
             {[
-              { id: 'claypay', label: 'ClayPay', balance: 'Rp 2.500.000', icon: Wallet },
+              { id: 'claywallet', label: 'ClayWallet', balance: 'Rp 2.500.000', icon: Wallet },
               { id: 'bca', label: 'BCA Virtual Account', balance: '', icon: CreditCard },
             ].map((method) => (
               <motion.button

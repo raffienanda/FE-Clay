@@ -29,7 +29,7 @@ const quickActions = [
 ]
 
 const paymentMethods = [
-  { icon: CreditCard, label: 'ClayPay', balance: 'Rp 2.500.000', primary: true },
+  { icon: CreditCard, label: 'ClayWallet', balance: 'Rp 2.500.000', primary: true },
   { icon: CreditCard, label: 'BCA **** 1234', balance: 'Connected', primary: false },
   { icon: CreditCard, label: 'GoPay', balance: 'Connected', primary: false },
 ]

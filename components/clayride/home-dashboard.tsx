@@ -124,7 +124,7 @@ export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 
           >
             <div className="flex items-center justify-between mb-4">
               <div>
-                <p className="text-white/70 text-xs font-medium">Saldo ClayPay</p>
+                <p className="text-white/70 text-xs font-medium">Saldo ClayWallet</p>
                 <p className="text-white text-2xl font-bold">Rp 2.500.000</p>
               </div>
               <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
