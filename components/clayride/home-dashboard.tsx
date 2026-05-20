@@ -180,9 +180,9 @@ export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 
                     <Image
                       src={service.imageSrc!}
                       alt={service.label}
-                      width={48}
-                      height={48}
-                      className="absolute -bottom-0.5 -right-0.5 w-12 h-12 object-contain"
+                      width={56}
+                      height={56}
+                      className="absolute -bottom-1 -right-1 w-14 h-14 object-contain"
                     />
                   </div>
                 ) : (
