@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Check,
 } from 'lucide-react'
+import Image from 'next/image'
 import type { Screen } from '@/app/page'
 
 interface DestinationConfirmationProps {
@@ -80,17 +81,15 @@ export function DestinationConfirmation({ onNavigate, defaultVehicleType = 'bike
   return (
     <div className="h-full flex flex-col bg-background">
       {/* Map Preview with Route */}
-      <div className="h-[35%] bg-gradient-to-b from-[#E8F4FF] to-[#D4E9FF] relative">
-        {/* Map Grid */}
-        <div className="absolute inset-0 opacity-30">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="routeGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8BBEFF" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#routeGrid)" />
-          </svg>
+      <div className="h-[35%] relative">
+        {/* Map Background */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oQYqsMJKeOPL4EUQzEeyeUyRucQYQs.png"
+            alt="Map Bandung"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Route Line */}
@@ -101,8 +100,8 @@ export function DestinationConfirmation({ onNavigate, defaultVehicleType = 'bike
             transition={{ duration: 1, ease: 'easeInOut' }}
             d="M 25 70 Q 35 50 45 45 Q 55 40 75 30"
             fill="none"
-            stroke="#8BBEFF"
-            strokeWidth="1"
+            stroke="#3B82F6"
+            strokeWidth="1.5"
             strokeDasharray="3 2"
           />
         </svg>

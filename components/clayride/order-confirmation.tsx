@@ -11,6 +11,7 @@ import {
   Star,
   Shield,
 } from 'lucide-react'
+import Image from 'next/image'
 import type { Screen } from '@/app/page'
 
 interface OrderConfirmationProps {
@@ -30,17 +31,15 @@ export function OrderConfirmation({ onNavigate }: OrderConfirmationProps) {
   return (
     <div className="h-full flex flex-col bg-background">
       {/* Map with Route */}
-      <div className="h-[40%] bg-gradient-to-b from-[#E8F4FF] to-[#D4E9FF] relative">
-        {/* Map Grid */}
-        <div className="absolute inset-0 opacity-30">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="confirmGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8BBEFF" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#confirmGrid)" />
-          </svg>
+      <div className="h-[40%] relative">
+        {/* Map Background */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oQYqsMJKeOPL4EUQzEeyeUyRucQYQs.png"
+            alt="Map Bandung"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Route Line */}
@@ -51,7 +50,7 @@ export function OrderConfirmation({ onNavigate }: OrderConfirmationProps) {
             transition={{ duration: 1.5, ease: 'easeInOut' }}
             d="M 20 75 Q 30 60 40 55 Q 50 50 60 45 Q 70 40 80 25"
             fill="none"
-            stroke="#8BBEFF"
+            stroke="#3B82F6"
             strokeWidth="1.5"
           />
         </svg>
