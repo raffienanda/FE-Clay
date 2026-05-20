@@ -32,12 +32,12 @@ interface HomeDashboardProps {
 
 const services = [
   { icon: Car, label: 'ClayRide', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/clayride-icon.png', vehicleType: 'bike' as const },
-  { icon: Car, label: 'ClayCar', color: 'bg-[#5A9FFF]', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/claycar-icon.png', vehicleType: 'car' as const },
+  { icon: Car, label: 'ClayCar', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/claycar-icon.png', vehicleType: 'car' as const },
   { icon: UtensilsCrossed, label: 'ClayFood', color: 'bg-accent', iconColor: 'text-white', screen: 'clayfood' as Screen, useImage: true, imageSrc: '/clayfood.png' },
-  { icon: Package, label: 'ClaySend', color: 'bg-[#52D49F]', iconColor: 'text-white', screen: 'claysend' as Screen, useImage: true, imageSrc: '/claysend.png' },
-  { icon: PawPrint, label: 'ClayPet', color: 'bg-[#FFB84D]', iconColor: 'text-white', screen: 'claypet' as Screen, useImage: true, imageSrc: '/claypet.png' },
-  { icon: Trash2, label: 'ClayWaste', color: 'bg-[#9B7DFF]', iconColor: 'text-white', screen: 'claywaste' as Screen, useImage: true, imageSrc: '/claywaste.png' },
-  { icon: Heart, label: 'ClayCare', color: 'bg-[#FF8FAB]', iconColor: 'text-white', screen: 'claycare' as Screen, useImage: true, imageSrc: '/claycare.png' },
+  { icon: Package, label: 'ClaySend', color: 'bg-primary', iconColor: 'text-white', screen: 'claysend' as Screen, useImage: true, imageSrc: '/claysend.png' },
+  { icon: PawPrint, label: 'ClayPet', color: 'bg-primary', iconColor: 'text-white', screen: 'claypet' as Screen, useImage: true, imageSrc: '/claypet.png' },
+  { icon: Trash2, label: 'ClayWaste', color: 'bg-primary', iconColor: 'text-white', screen: 'claywaste' as Screen, useImage: true, imageSrc: '/claywaste.png' },
+  { icon: Heart, label: 'ClayCare', color: 'bg-primary', iconColor: 'text-white', screen: 'claycare' as Screen, useImage: true, imageSrc: '/claycare.png' },
   { icon: MoreHorizontal, label: 'Lainnya', color: 'bg-muted', iconColor: 'text-muted-foreground', screen: 'other-services' as Screen },
 ]
 
@@ -180,9 +180,9 @@ export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 
                     <Image
                       src={service.imageSrc!}
                       alt={service.label}
-                      width={56}
-                      height={56}
-                      className="absolute -bottom-1 -right-1 w-14 h-14 object-contain"
+                      width={48}
+                      height={48}
+                      className="absolute -bottom-0.5 -right-0.5 w-12 h-12 object-contain"
                     />
                   </div>
                 ) : (
