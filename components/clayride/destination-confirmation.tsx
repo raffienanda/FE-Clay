@@ -73,8 +73,9 @@ const carVehicles = [
   },
 ]
 
-export function DestinationConfirmation({ onNavigate }: DestinationConfirmationProps) {
-  const [selectedVehicle, setSelectedVehicle] = useState('economy')
+export function DestinationConfirmation({ onNavigate, defaultVehicleType = 'bike' }: DestinationConfirmationProps) {
+  const vehicles = defaultVehicleType === 'car' ? carVehicles : bikeVehicles
+  const [selectedVehicle, setSelectedVehicle] = useState(vehicles[0].id)
 
   return (
     <div className="h-full flex flex-col bg-background">
@@ -194,7 +195,13 @@ export function DestinationConfirmation({ onNavigate }: DestinationConfirmationP
                       : 'bg-secondary border-2 border-transparent'
                   }`}
                 >
-                  <div className="text-3xl">{vehicle.icon}</div>
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    {vehicle.useImage ? (
+                      <img src={vehicle.icon} alt={vehicle.name} className="w-10 h-10 object-contain" />
+                    ) : (
+                      <span className="text-3xl">{vehicle.icon}</span>
+                    )}
+                  </div>
                   <div className="flex-1 text-left">
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-semibold text-foreground">{vehicle.name}</p>
