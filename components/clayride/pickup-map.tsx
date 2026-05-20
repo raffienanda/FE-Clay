@@ -8,6 +8,7 @@ import {
   Minus,
   Crosshair,
 } from 'lucide-react'
+import Image from 'next/image'
 import type { Screen } from '@/app/page'
 
 interface PickupMapProps {
@@ -19,33 +20,14 @@ export function PickupMap({ onNavigate }: PickupMapProps) {
     <div className="h-full flex flex-col bg-[#E8F4FF] relative">
       {/* Full Screen Map */}
       <div className="flex-1 relative">
-        {/* Map Pattern */}
+        {/* Map Background */}
         <div className="absolute inset-0">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="mapGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#8BBEFF" strokeWidth="0.5" opacity="0.4" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#mapGrid)" />
-          </svg>
-        </div>
-
-        {/* Simulated Roads */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Main Road */}
-          <div className="absolute w-full h-3 bg-white/80 top-1/3 left-0 shadow-sm" />
-          <div className="absolute w-3 h-full bg-white/80 left-1/4 top-0 shadow-sm" />
-          <div className="absolute w-full h-2 bg-white/60 top-2/3 left-0 rotate-12" />
-          <div className="absolute w-2 h-full bg-white/60 right-1/3 top-0" />
-        </div>
-
-        {/* Buildings */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-8 w-16 h-20 bg-[#D4E9FF] rounded-lg shadow-sm" />
-          <div className="absolute top-32 right-12 w-12 h-16 bg-[#C5DFFF] rounded-lg shadow-sm" />
-          <div className="absolute bottom-40 left-16 w-20 h-14 bg-[#D4E9FF] rounded-lg shadow-sm" />
-          <div className="absolute bottom-60 right-8 w-14 h-24 bg-[#C5DFFF] rounded-lg shadow-sm" />
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oQYqsMJKeOPL4EUQzEeyeUyRucQYQs.png"
+            alt="Map Bandung"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Center Pickup Pin */}
