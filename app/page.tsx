@@ -57,6 +57,7 @@ export default function ClayridePage() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home')
   const [selectedFood, setSelectedFood] = useState<any>(null)
   const [cartItems, setCartItems] = useState<any[]>([])
+  const [defaultVehicleType, setDefaultVehicleType] = useState<'bike' | 'car'>('bike')
 
   const addToCart = (item: any) => {
     setCartItems(prev => {
@@ -81,7 +82,7 @@ export default function ClayridePage() {
   const renderScreen = () => {
     switch (currentScreen) {
       case 'home':
-        return <HomeDashboard onNavigate={setCurrentScreen} cartItemsCount={cartItems.length} />
+        return <HomeDashboard onNavigate={setCurrentScreen} cartItemsCount={cartItems.length} setDefaultVehicleType={setDefaultVehicleType} />
       case 'search':
         return <SearchScreen onNavigate={setCurrentScreen} />
       case 'destination':
@@ -89,7 +90,7 @@ export default function ClayridePage() {
       case 'pickup':
         return <PickupMap onNavigate={setCurrentScreen} />
       case 'confirm-destination':
-        return <DestinationConfirmation onNavigate={setCurrentScreen} />
+        return <DestinationConfirmation onNavigate={setCurrentScreen} defaultVehicleType={defaultVehicleType} />
       case 'order-confirmation':
         return <OrderConfirmation onNavigate={setCurrentScreen} />
       case 'clayfood':

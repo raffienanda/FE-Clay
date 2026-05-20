@@ -14,35 +14,62 @@ import type { Screen } from '@/app/page'
 
 interface DestinationConfirmationProps {
   onNavigate: (screen: Screen) => void
+  defaultVehicleType?: 'bike' | 'car'
 }
 
-const vehicles = [
+const bikeVehicles = [
   { 
-    id: 'economy',
+    id: 'bike-economy',
     name: 'ClayRide', 
     type: 'Ekonomi', 
-    price: 'Rp 25.000', 
+    price: 'Rp 15.000', 
     eta: '3 mnt',
-    capacity: '4',
-    icon: '🚗'
+    capacity: '1',
+    icon: '/clayride-icon.png',
+    useImage: true
   },
   { 
-    id: 'comfort',
+    id: 'bike-comfort',
     name: 'ClayRide+', 
     type: 'Comfort', 
-    price: 'Rp 45.000', 
+    price: 'Rp 25.000', 
+    eta: '4 mnt',
+    capacity: '1',
+    icon: '/clayride-icon.png',
+    useImage: true
+  },
+]
+
+const carVehicles = [
+  { 
+    id: 'car-economy',
+    name: 'ClayCar', 
+    type: 'Ekonomi', 
+    price: 'Rp 35.000', 
     eta: '5 mnt',
     capacity: '4',
-    icon: '🚙'
+    icon: '/claycar-icon.png',
+    useImage: true
   },
   { 
-    id: 'premium',
+    id: 'car-comfort',
+    name: 'ClayCar+', 
+    type: 'Comfort', 
+    price: 'Rp 55.000', 
+    eta: '6 mnt',
+    capacity: '4',
+    icon: '/claycar-icon.png',
+    useImage: true
+  },
+  { 
+    id: 'car-premium',
     name: 'ClayLux', 
     type: 'Premium', 
     price: 'Rp 95.000', 
     eta: '8 mnt',
     capacity: '4',
-    icon: '🏎️'
+    icon: '/claycar-icon.png',
+    useImage: true
   },
 ]
 

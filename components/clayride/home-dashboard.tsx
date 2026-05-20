@@ -27,10 +27,12 @@ interface HomeDashboardProps {
   onNavigate: (screen: Screen) => void
   cartItemsCount?: number
   currentScreen?: string
+  setDefaultVehicleType?: (type: 'bike' | 'car') => void
 }
 
 const services = [
-  { icon: Car, label: 'ClayRide', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/clayride-icon.png' },
+  { icon: Car, label: 'ClayRide', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/clayride-icon.png', vehicleType: 'bike' as const },
+  { icon: Car, label: 'ClayCar', color: 'bg-[#5A9FFF]', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/claycar-icon.png', vehicleType: 'car' as const },
   { icon: UtensilsCrossed, label: 'ClayFood', color: 'bg-accent', iconColor: 'text-white', screen: 'clayfood' as Screen },
   { icon: Package, label: 'ClaySend', color: 'bg-[#52D49F]', iconColor: 'text-white', screen: 'claysend' as Screen },
   { icon: PawPrint, label: 'ClayPet', color: 'bg-[#FFB84D]', iconColor: 'text-white', screen: 'claypet' as Screen },
@@ -44,7 +46,14 @@ const promos = [
   { title: 'Gratis Ongkir', subtitle: 'Pesanan di atas Rp100.000', gradient: 'from-accent to-[#FF8FAB]' },
 ]
 
-export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 'home' }: HomeDashboardProps) {
+export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 'home', setDefaultVehicleType }: HomeDashboardProps) {
+  const handleServiceClick = (service: typeof services[0]) => {
+    if (service.vehicleType && setDefaultVehicleType) {
+      setDefaultVehicleType(service.vehicleType)
+    }
+    onNavigate(service.screen)
+  }
+
   return (
     <div className="h-full flex flex-col bg-background">
       {/* Header */}
@@ -162,7 +171,7 @@ export function HomeDashboard({ onNavigate, cartItemsCount = 0, currentScreen = 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                onClick={() => onNavigate(service.screen)}
+                onClick={() => handleServiceClick(service)}
                 className="flex flex-col items-center gap-2"
               >
                 {service.useImage ? (
