@@ -33,11 +33,11 @@ interface HomeDashboardProps {
 const services = [
   { icon: Car, label: 'ClayRide', color: 'bg-primary', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/clayride-icon.png', vehicleType: 'bike' as const },
   { icon: Car, label: 'ClayCar', color: 'bg-[#5A9FFF]', iconColor: 'text-white', screen: 'destination' as Screen, useImage: true, imageSrc: '/claycar-icon.png', vehicleType: 'car' as const },
-  { icon: UtensilsCrossed, label: 'ClayFood', color: 'bg-accent', iconColor: 'text-white', screen: 'clayfood' as Screen },
-  { icon: Package, label: 'ClaySend', color: 'bg-[#52D49F]', iconColor: 'text-white', screen: 'claysend' as Screen },
-  { icon: PawPrint, label: 'ClayPet', color: 'bg-[#FFB84D]', iconColor: 'text-white', screen: 'claypet' as Screen },
-  { icon: Trash2, label: 'ClayWaste', color: 'bg-[#9B7DFF]', iconColor: 'text-white', screen: 'claywaste' as Screen },
-  { icon: Heart, label: 'ClayCare', color: 'bg-[#FF8FAB]', iconColor: 'text-white', screen: 'claycare' as Screen },
+  { icon: UtensilsCrossed, label: 'ClayFood', color: 'bg-accent', iconColor: 'text-white', screen: 'clayfood' as Screen, useImage: true, imageSrc: '/clayfood.png' },
+  { icon: Package, label: 'ClaySend', color: 'bg-[#52D49F]', iconColor: 'text-white', screen: 'claysend' as Screen, useImage: true, imageSrc: '/claysend.png' },
+  { icon: PawPrint, label: 'ClayPet', color: 'bg-[#FFB84D]', iconColor: 'text-white', screen: 'claypet' as Screen, useImage: true, imageSrc: '/claypet.png' },
+  { icon: Trash2, label: 'ClayWaste', color: 'bg-[#9B7DFF]', iconColor: 'text-white', screen: 'claywaste' as Screen, useImage: true, imageSrc: '/claywaste.png' },
+  { icon: Heart, label: 'ClayCare', color: 'bg-[#FF8FAB]', iconColor: 'text-white', screen: 'claycare' as Screen, useImage: true, imageSrc: '/claycare.png' },
   { icon: MoreHorizontal, label: 'Lainnya', color: 'bg-muted', iconColor: 'text-muted-foreground', screen: 'other-services' as Screen },
 ]
 
